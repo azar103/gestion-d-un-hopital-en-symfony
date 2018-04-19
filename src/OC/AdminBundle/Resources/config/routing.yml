@@ -4,7 +4,7 @@ oc_admin_homepage:
     defaults: { _controller: OCAdminBundle:Authentification:index }
 
 oc_admin_appoinment_view:
-    path:    /appoinment/{page} 
+    path:    /appoinments/{page} 
     defaults: { _controller: OCAdminBundle:Appoinment:view, page: 1 }
     requirements:
               page: \d*
