@@ -1,0 +1,72 @@
+# src/OC/AdminBundle/Resources/config/routing.yml
+oc_admin_homepage:
+    path:     /
+    defaults: { _controller: OCAdminBundle:Authentification:index }
+
+oc_admin_appoinment_view:
+    path:    /appoinment/{page} 
+    defaults: { _controller: OCAdminBundle:Appoinment:view, page: 1 }
+    requirements:
+              page: \d*
+
+oc_admin_appoinment_add:
+    path:    /appoinment/add
+    defaults: { _controller: OCAdminBundle:Appoinment:app }
+
+oc_admin_appoinment_edit:
+    path:   /appoinment/edit/{id}
+    defaults: { _controller: OCAdminBundle:Appoinment:edit }  
+    requirements:
+              id: \d+
+
+oc_admin_appoinment_delete:
+    path:  /appoinment/delete/{id}
+    defaults: { _controller: OCAdminBundle:Appoinment:delete }
+    requirements:
+              id: \d+ 
+
+oc_admin_doctor_view:
+    path:  /doctor/{page}
+    defaults: { _controller: OCAdminBundle:Doctor:view, page: 1 }
+    requirements:
+             page: \d*
+
+oc_admin_doctor_add:
+    path:  /doctor/add
+    defaults: { _controller: OCAdminBundle:Doctor:add }
+
+oc_admin_doctor_delete:
+    path: /doctor/delete/{id}
+    defaults: { _controller: OCAdminBundle:Doctor:delete }
+    requirements:
+             id: \d*
+
+oc_admin_doctor_edit:
+    path: /doctor/edit/{id}
+    defaults: {_controller: OCAdminBundle:Doctor:edit }
+    requirements:
+             id: \d*
+
+oc_admin_patient_view:
+    path: /patient/{page}
+    defaults: { _controller: OCAdminBundle:Patient:view , page: 1 }  
+    requirements:
+              page: \id*
+
+oc_admin_patient_add:
+    path:  /patient/add
+    defaults: { _controller: OCAdminBundle:Patient:add }
+
+oc_admin_patient_delete:
+    path: /doctor/delete/{id}
+    defaults: { _controller: OCAdminBundle:Patient:delete }
+    requirements:
+             id: \d*
+
+oc_admin_patient_edit:
+    path: /doctor/edit/{id}
+    defaults: {_controller: OCAdminBundle:Patient:edit }
+    requirements:
+             id: \d*              
+
+              

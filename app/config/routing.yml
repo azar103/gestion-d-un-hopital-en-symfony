@@ -1,0 +1,4 @@
+oc_admin:
+    resource: "@OCAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
