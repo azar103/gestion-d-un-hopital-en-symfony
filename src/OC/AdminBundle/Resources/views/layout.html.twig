@@ -1,0 +1,45 @@
+
+{# src/OC/PlatformBundle/Resources/views/layout.html.twig #}
+{% extends "::layout.html.twig" %}
+{% block title %}
+    HospitalManagment
+{% endblock %} 
+
+{% block body %}
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Hello Admin</a>
+    </div>
+   
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{{path('oc_admin_homepage')}}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container-fluid">
+   <div class="jumbotron">
+      <h2 class="text-center">
+         Hospital Managment System
+      </h2>
+   </div>
+</div>
+<div class="row text-center ">
+
+    <div class="col-md-4">
+      <a href="{{path('oc_admin_doctor_view')}}">Doctors</a>
+   </div>
+   <div class="col-md-4">
+      <a href="{{path('oc_admin_patient_view')}}">Patients</a>
+   </div>
+   <div class="col-md-4">
+      <a href="{{path('oc_admin_appoinment_view')}}">Appoinments</a>
+   </div>
+
+   
+</div>
+{% block oc_body_content %}
+  
+{% endblock %}
+
+{% endblock %}

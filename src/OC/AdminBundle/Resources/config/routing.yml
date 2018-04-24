@@ -11,7 +11,7 @@ oc_admin_appoinment_view:
 
 oc_admin_appoinment_add:
     path:    /appoinment/add
-    defaults: { _controller: OCAdminBundle:Appoinment:app }
+    defaults: { _controller: OCAdminBundle:Appoinment:add }
 
 oc_admin_appoinment_edit:
     path:   /appoinment/edit/{id}
@@ -25,8 +25,14 @@ oc_admin_appoinment_delete:
     requirements:
               id: \d+ 
 
+oc_admin_appoinment_undelete:
+    path:  /appoinment/undelete/{id}
+    defaults: { _controller: OCAdminBundle:Appoinment:undelete }
+    requirements:
+              id: \d+               
+
 oc_admin_doctor_view:
-    path:  /doctor/{page}
+    path:  /doctors/{page}
     defaults: { _controller: OCAdminBundle:Doctor:view, page: 1 }
     requirements:
              page: \d*
@@ -40,7 +46,11 @@ oc_admin_doctor_delete:
     defaults: { _controller: OCAdminBundle:Doctor:delete }
     requirements:
              id: \d*
-
+oc_admin_doctor_undelete:
+    path:  /doctor/undelete/{id}
+    defaults: { _controller: OCAdminBundle:Doctor:undelete }
+    requirements:
+              id: \d+   
 oc_admin_doctor_edit:
     path: /doctor/edit/{id}
     defaults: {_controller: OCAdminBundle:Doctor:edit }
@@ -48,7 +58,7 @@ oc_admin_doctor_edit:
              id: \d*
 
 oc_admin_patient_view:
-    path: /patient/{page}
+    path: /patients/{page}
     defaults: { _controller: OCAdminBundle:Patient:view , page: 1 }  
     requirements:
               page: \id*
@@ -58,13 +68,17 @@ oc_admin_patient_add:
     defaults: { _controller: OCAdminBundle:Patient:add }
 
 oc_admin_patient_delete:
-    path: /doctor/delete/{id}
+    path: /patient/delete/{id}
     defaults: { _controller: OCAdminBundle:Patient:delete }
     requirements:
              id: \d*
-
+oc_admin_patient_undelete:
+    path:  /patient/undelete/{id}
+    defaults: { _controller: OCAdminBundle:Patient:undelete }
+    requirements:
+              id: \d+   
 oc_admin_patient_edit:
-    path: /doctor/edit/{id}
+    path: /patient/edit/{id}
     defaults: {_controller: OCAdminBundle:Patient:edit }
     requirements:
              id: \d*              

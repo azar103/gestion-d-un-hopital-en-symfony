@@ -1,17 +1,17 @@
-{# src/OC/AdminBundle/Resources/views/Appoinment/add.html.twig #}
+{# src/OC/AdminBundle/Resources/views/Doctor/edit.html.twig #}
 {% extends "OCAdminBundle::layout.html.twig" %}
 
 {% block oc_body_content %}
   <div class="container-fluid" style="background-color:red;color:white;">
   <h2>
 
-    Add Appoinment
+    Edit Doctor
   </h2>  
 </div>
-{{include("OCAdminBundle:Appoinment:form.html.twig")}}
+{{include("OCAdminBundle:Doctor:form.html.twig")}}
 
 <p>
-    Attention : ce rendez-vous sera ajouté directement
+    Attention : ce Docteur sera modifié directement
     sur la page d'accueil après validation du formulaire.
   </p>
 {% endblock %}

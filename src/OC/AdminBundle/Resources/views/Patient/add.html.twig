@@ -1,17 +1,16 @@
-{# src/OC/AdminBundle/Resources/views/Appoinment/add.html.twig #}
+{# src/OC/AdminBundle/Resources/views/Patien/add.html.twig #}
 {% extends "OCAdminBundle::layout.html.twig" %}
 
 {% block oc_body_content %}
   <div class="container-fluid" style="background-color:red;color:white;">
   <h2>
 
-    Add Appoinment
-  </h2>  
+    Add Patient
 </div>
-{{include("OCAdminBundle:Appoinment:form.html.twig")}}
+{{include("OCAdminBundle:Patient:form.html.twig")}}
 
 <p>
-    Attention : ce rendez-vous sera ajouté directement
+    Attention : ce Patient sera ajouté directement
     sur la page d'accueil après validation du formulaire.
   </p>
 {% endblock %}

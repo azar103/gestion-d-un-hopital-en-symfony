@@ -1,13 +1,81 @@
 {# src/OC/AdminBundle/Resources/views/Appoinment/view.html.twig #}
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Bienvenue sur ma deuxiéme page developpée avec Symfony!</title>
-</head>
-<body>
-<h1>Page d'administration</h1>
+{% extends "OCAdminBundle::layout.html.twig" %}
 
-<p>C'est la page d'administration </p>
+{% block title %}
+    {{ parent() }}-Appoinments
+{% endblock %}
 
-</body>
-</html>
+
+
+
+    
+{% block oc_body_content %}
+    <div class="container-fluid" style="background-color:red;color:white;">
+  <h2>
+
+    Appoinment List
+  </h2>  
+</div>
+<br/>
+  <a href="{{path('oc_admin_appoinment_add')}}" class="btn btn-primary"> <span class="glyphicon glyphicon-plus"></span> Add new Record</a>
+ 
+<div class="table-responsive">          
+  <table class="table">
+    <thead>
+      <tr>
+        <th>S NO</th>
+        <th>Patient Name</th>
+        <th>Doctor Name</th>
+        <th>Time</th>
+        <th>Date</th>
+        <th>Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for appoinment in listAppoinments %}
+      <tr>
+        <td>{{ appoinment.id }}</td>
+        <td>{{ appoinment.patientName }}</td>
+        <td>{{ appoinment.doctorName }}</td>
+        <td>{{ appoinment.time }}</td>
+        <td>{{ appoinment.date }}</td>
+        <td>
+        <a href="{{path('oc_admin_appoinment_delete', {'id': appoinment.id})}}" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i>  delete </a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  </div> 
+<div class="container-fluid" style="background-color:red;color:white;">
+  <h2>
+    
+    Deleted Records
+  </h2>  
+</div>
+ <div class="table-responsive">          
+  <table class="table">
+    <thead>
+      <tr>
+        <th>S NO</th>
+        <th>Patient Name</th>
+        <th>Doctor Name</th>
+        <th>Time</th>
+        <th>Date</th>
+        <th>Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Anna</td>
+        <td>Pitt</td>
+        <td>35</td>
+        <td>New York</td>
+        <td><a href="{{path('oc_admin_appoinment_undelete', {'id': 5})}}" class="btn btn-danger"><i class="material-icons"></i>  Undelete</a></td>
+      </tr>
+    </tbody>
+  </table>
+  </div> 
+{% endblock %}
+

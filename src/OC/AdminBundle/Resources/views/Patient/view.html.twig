@@ -1,0 +1,74 @@
+{# src/OC/AdminBundle/Resources/views/Patient/add.html.twig #}
+{% extends "OCAdminBundle::layout.html.twig" %}
+
+{% block title %}
+    {{ parent() }}-Appoinments
+{% endblock %}
+
+
+
+
+    
+{% block oc_body_content %}
+    <div class="container-fluid" style="background-color:red;color:white;">
+  <h2>
+
+    Patient List
+  </h2>  
+</div>
+<br/>
+  <a href="{{path('oc_admin_patient_add')}}" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add new Record</a>
+ 
+<div class="table-responsive">          
+  <table class="table">
+    <thead>
+      <tr>
+        <th>S NO</th>
+        <th>Patient Name</th>
+        <th>Address</th>
+        <th>sex</th>
+        <th>Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for patient in listPatients %}
+      <tr>
+        <td>{{ patient.id }}</td>
+        <td>{{ patient.name}}</td>
+        <td>{{ patient.address }}</td>
+        <th>{{ patient.sex }}</th>
+        <td><a href="{{path('oc_admin_patient_edit', {'id':  patient.id})}}" class="btn btn-default"><i class="glyphicon glyphicon-edit"></i> Modify</a> 
+        <a href="{{path('oc_admin_patient_delete', {'id': patient.id})}}" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i> Delete</a> </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  </div> 
+<div class="container-fluid" style="background-color:red;color:white;">
+  <h2>
+    
+    Deleted Records
+  </h2>  
+</div>
+ <div class="table-responsive">          
+   <table class="table">
+    <thead>
+      <tr>
+        <th>S NO</th>
+        <th>Patient Name</th>
+        <th>Address</th>
+        <th>Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>azeaze</td>
+        <td>aeze</td>
+        <td> 
+        <a href="{{path('oc_admin_patient_undelete', {'id': 1})}}" class="btn btn-danger"><i class="material-icons"></i>  Undelete</a> </td>
+      </tr>
+    </tbody>
+  </table>
+  </div> 
+{% endblock %}
